@@ -25,9 +25,12 @@
           name = "impurePythonEnv";
           venvDir = "./.venv";
           
-          packages = with pkgs; [
+          packages = (with pkgs; [
             go
-          ];
+          ]) ++
+          ([
+            (pkgs.callPackage ./bootdev.nix {})
+          ]);
           
           buildInputs = with pkgs; [
             python3Packages.python
