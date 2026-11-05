@@ -20,6 +20,7 @@
         flakeLockPath = ./flake.lock;
 
         extraPackages = [
+          pkgs.python3Packages.pytest
           nixos-config.packages.${system}.bootdev-cli
         ];
 
